@@ -1,4 +1,12 @@
-Project: Student-Voucher
+# REPO
+- Contract di "token-management-system"
+- Frontend di "school-token-next" 
+
+NEXT_PUBLIC_CONTRACT_ADDRESS=STNTH1FWV8Y7V16NS7X376NGYYE5VYEJ18AW5FFF
+NEXT_PUBLIC_CONTRACT_NAME=simple-token-v2
+
+
+# Project: Student-Voucher
 🎯 Problem Statement
 The Problem in Indonesia:
 In Indonesia, the culture of corruption and dishonesty often starts as early as school years. Lessons on honesty and accountability — values aligned with the principles of Web3 — are rarely instilled through the education system.
