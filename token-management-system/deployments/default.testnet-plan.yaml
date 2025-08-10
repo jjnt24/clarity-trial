@@ -9,10 +9,10 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: simple-token
+            contract-name: simple-token-v2
             expected-sender: STNTH1FWV8Y7V16NS7X376NGYYE5VYEJ18AW5FFF
-            cost: 16880
-            path: "contracts\\simple-token.clar"
+            cost: 24780
+            path: "contracts\\simple-token-v2.clar"
             anchor-block-only: true
             clarity-version: 2
       epoch: "2.4"

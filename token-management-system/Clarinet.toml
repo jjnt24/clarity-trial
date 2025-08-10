@@ -5,11 +5,15 @@ authors = ["Jonathan <jjnt224@gmail.com>"]
 telemetry = false
 cache_dir = "./.cache"
 
-[contracts.simple-token]
-path = "contracts/simple-token.clar"
+[contracts.simple-token-v2]
+path = "contracts/simple-token-v2.clar"
 clarity_version = 2
 epoch = 2.4
+
+# [contracts.sip-010-trait]
+# path = "contracts/sip-010-trait.clar"
 
 [repl]
 costs_version = 2
 parser_version = 2
+

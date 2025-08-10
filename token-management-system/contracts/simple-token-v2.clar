@@ -6,7 +6,23 @@
 
 ;; Implement SIP-010 fungible token trait
 ;; (impl-trait 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.sip-010-trait)
+;; (impl-trait 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.sip-010-trait-ft-standard.sip-010-trait)
 (impl-trait 'ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.sip-010-trait-ft-standard.sip-010-trait)
+;; (use-trait sip-010-trait .sip-010-trait)
+
+(define-trait sip-010-trait
+  (
+    ;; define the full SIP-010 trait interface here
+    (transfer (uint principal principal (optional (buff 34))) (response bool uint))
+    (get-balance (principal) (response uint uint))
+    (get-total-supply () (response uint uint))
+    (get-name () (response (string-utf8 32) uint))
+    (get-symbol () (response (string-utf8 32) uint))
+    (get-decimals () (response uint uint))
+    (get-token-uri () (response (optional (string-utf8 256)) uint))
+    (get-owner () (response principal uint))
+  )
+)
 
 ;; Define the token
 (define-fungible-token workshop-token)
@@ -61,4 +77,9 @@
     (asserts! (is-eq tx-sender contract-owner) err-owner-only)
     (ft-mint? workshop-token amount to)
   )
+)
+
+;; Burn function (for redeem)
+(define-public (burn (amount uint))
+  (ft-burn? workshop-token amount tx-sender)
 )
